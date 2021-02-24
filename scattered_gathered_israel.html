@@ -20,7 +20,12 @@ Description:  This is a fun project inspired by my class on the Scattering and G
       google.charts.setOnLoadCallback(drawChart);
 
       function drawChart() {
+        // Create custom tooltips for later
         var tooltip_html = '<span style="display: none" />' // Google doesn't provide a way to remove the tooltip. This reduces it to a dot.
+        var tooltip_northern = AkaTooltip(['Ephraim', 'The Kingdom of Israel', 'The Ten Tribes'])
+        var tooltip_southern = AkaTooltip(['Judah', 'Ancient Jews'])
+
+        // Create a data table for the chart
         var data = new google.visualization.DataTable();
         data.addColumn('string', 'From');
         data.addColumn('string', 'To');
@@ -54,8 +59,8 @@ Description:  This is a fun project inspired by my class on the Scattering and G
           [ 'Ephraim',                    'Mixed Israel',              10, tooltip_html ],
           [ 'Menasseh',                   'Mixed Israel',              10, tooltip_html ],
           [ 'Benjamin',                   'Mixed Israel',              10, tooltip_html ],
-          [ 'Mixed Israel',               'Southern Kingdom',          40, tooltip_html ],
-          [ 'Mixed Israel',               'Northern Kingdom',          80, tooltip_html ],
+          [ 'Mixed Israel',               'Southern Kingdom',          40, tooltip_southern ],
+          [ 'Mixed Israel',               'Northern Kingdom',          80, tooltip_northern ],
           [ 'Southern Kingdom',           'Lost Israel',               15, tooltip_html ],
           [ 'Southern Kingdom',           'Modern Jews',               25, tooltip_html ],
           [ 'Northern Kingdom',           'Restored / Gathered Church',25, tooltip_html ],
@@ -87,6 +92,16 @@ Description:  This is a fun project inspired by my class on the Scattering and G
         // Draw chart
         var chart = new google.visualization.Sankey(document.getElementById('sankey_basic'));
         chart.draw(data, options);
+      }
+
+      // This helps me customize node labels via tooltip
+      function AkaTooltip(alternate_terms){
+        var html_text = '<div style = "padding: 5px;">Also known as:<ul>'
+        alternate_terms.forEach(element => {
+          html_text += '<li>' + element + '</li>'
+        });
+        html_text += '</ul></div>'
+        return html_text
       }
     </script>
   </head>
