@@ -1,0 +1,93 @@
+<html>
+  <head>
+    <style type="css">
+      .google-visualization-tooltip{
+        display: none;
+      }
+    </style>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['sankey']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var tooltip_html = '<span style="display: none" />' // Google doesn't provide a way to remove the tooltip. This reduces it to a dot.
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'From');
+        data.addColumn('string', 'To');
+        data.addColumn('number', 'Weight');
+        data.addColumn({'type': 'string', 'role': 'tooltip', 'p': {'html': true}});
+
+        data.addRows([
+          // [ 'Isaac', 'Esau', 10, tooltip_html ],
+          // [ 'Abraham', 'Ishmael', 10, tooltip_html ],
+          // [ 'Abraham', 'Isaac', 130, tooltip_html ],
+          // [ 'Ishmael', 'Lost Israel', 10, tooltip_html ],
+          // [ 'Esau', 'Lost Israel', 10, tooltip_html ],
+          // [ 'Isaac', 'Israel', 120, tooltip_html ],
+          [ 'Israel', 'Reuben', 10, tooltip_html ],
+          [ 'Israel', 'Simeon', 10, tooltip_html ],
+          [ 'Israel', 'Levi', 10, tooltip_html ],
+          [ 'Israel', 'Judah', 10, tooltip_html ],
+          [ 'Israel', 'Naphtali', 10, tooltip_html ],
+          [ 'Israel', 'Gad', 10, tooltip_html ],
+          [ 'Israel', 'Asher', 10, tooltip_html ],
+          [ 'Israel', 'Issachar', 10, tooltip_html ],
+          [ 'Israel', 'Zebulun', 10, tooltip_html ],
+          [ 'Israel', 'Ephraim', 10, tooltip_html ],
+          [ 'Israel', 'Menasseh', 10, tooltip_html ],
+          [ 'Israel', 'Benjamin', 10, tooltip_html ],
+          [ 'Reuben', 'Mixed Israel', 10, tooltip_html ],
+          [ 'Naphtali', 'Mixed Israel', 10, tooltip_html ],
+          [ 'Simeon', 'Mixed Israel', 10, tooltip_html ],
+          [ 'Levi', 'Mixed Israel', 10, tooltip_html ],
+          [ 'Judah', 'Mixed Israel', 10, tooltip_html ],
+          [ 'Gad', 'Mixed Israel', 10, tooltip_html ],
+          [ 'Asher', 'Mixed Israel', 10, tooltip_html ],
+          [ 'Issachar', 'Mixed Israel', 10, tooltip_html ],
+          [ 'Zebulun', 'Mixed Israel', 10, tooltip_html ],
+          [ 'Ephraim', 'Mixed Israel', 10, tooltip_html ],
+          [ 'Menasseh', 'Mixed Israel', 10, tooltip_html ],
+          [ 'Benjamin', 'Mixed Israel', 10, tooltip_html ],
+          [ 'Mixed Israel', 'Judah / Southern Kingdom', 40, tooltip_html ],
+          [ 'Mixed Israel', 'Ephraim / Northern Kingdom', 80, tooltip_html ],
+          [ 'Judah / Southern Kingdom', 'Lost Israel', 15, tooltip_html ],
+          [ 'Judah / Southern Kingdom', 'Modern Jews', 25, tooltip_html ],
+          [ 'Ephraim / Northern Kingdom', 'Restored Church / Gathered Israel', 25, tooltip_html ],
+          [ 'Ephraim / Northern Kingdom', 'Lost Israel', 55, tooltip_html ],
+          [ 'Restored Church / Gathered Israel', 'D&C "Ephraim"', 25, tooltip_html ],
+          [ 'Lost Israel', 'D&C "Judah"', 70, tooltip_html ],
+          [ 'Modern Jews', 'D&C "Judah"', 25, tooltip_html ],
+        ]);
+
+        // Sets chart options.
+        var colors = ['#a6cee3', '#b2df8a', '#fb9a99', '#fdbf6f',
+                  '#cab2d6', '#ffff99', '#1f78b4', '#33a02c'];
+        var options = {
+          // width: 1900,
+          sankey: {
+            node: {
+              colors: colors,
+              label: { fontName: 'Calibri', fontSize: 18 }
+            },
+            link: {
+              colorMode: 'gradient',
+              colors: colors
+            }
+          },
+          tooltip: {
+            // textStyle: {color: 'black'}, showColorCode: true
+            isHtml: true
+          }
+        };
+
+        // Instantiates and draws our chart, passing in some options.
+        var chart = new google.visualization.Sankey(document.getElementById('sankey_basic'));
+        chart.draw(data, options);
+      }
+    </script>
+  </head>
+  <body>
+    <div id="sankey_basic" style="width: 100%; height: 600px;"></div>
+  </body>
+</html>
