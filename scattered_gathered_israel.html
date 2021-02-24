@@ -60,9 +60,10 @@
           [ 'Modern Jews', 'D&C "Judah"', 25, tooltip_html ],
         ]);
 
-        // Sets chart options.
         var colors = ['#a6cee3', '#b2df8a', '#fb9a99', '#fdbf6f',
                   '#cab2d6', '#ffff99', '#1f78b4', '#33a02c'];
+                  
+        // Sets chart options
         var options = {
           // width: 1900,
           sankey: {
@@ -75,10 +76,7 @@
               colors: colors
             }
           },
-          tooltip: {
-            // textStyle: {color: 'black'}, showColorCode: true
-            isHtml: true
-          }
+          tooltip: { isHtml: true }
         };
 
         // Instantiates and draws our chart, passing in some options.
