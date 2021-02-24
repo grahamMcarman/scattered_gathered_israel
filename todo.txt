@@ -7,8 +7,6 @@
 -   Try out annotation instead of tooltip (for AKA)
     https://developers.google.com/chart/interactive/docs/customizing_tooltip_content#annotating-data
 
--   Deploy to S3 and email Dr. Chadwick
-
-+   Try connecting GitHub to S3
++   Try connecting GitHub to Amplify
 
 +   Try getting a domain name
