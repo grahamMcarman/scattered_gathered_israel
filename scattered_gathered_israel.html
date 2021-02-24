@@ -19,12 +19,12 @@
         data.addColumn({'type': 'string', 'role': 'tooltip', 'p': {'html': true}});
 
         data.addRows([
-          // [ 'Isaac', 'Esau', 10, tooltip_html ],
-          // [ 'Abraham', 'Ishmael', 10, tooltip_html ],
-          // [ 'Abraham', 'Isaac', 130, tooltip_html ],
-          // [ 'Ishmael', 'Lost Israel', 10, tooltip_html ],
-          // [ 'Esau', 'Lost Israel', 10, tooltip_html ],
-          // [ 'Isaac', 'Israel', 120, tooltip_html ],
+          [ 'Isaac', 'Esau', 10, tooltip_html ],
+          [ 'Abraham', 'Ishmael', 10, tooltip_html ],
+          [ 'Abraham', 'Isaac', 130, tooltip_html ],
+          [ 'Ishmael', 'Lost Israel', 10, tooltip_html ],
+          [ 'Esau', 'Lost Israel', 10, tooltip_html ],
+          [ 'Isaac', 'Israel', 120, tooltip_html ],
           [ 'Israel', 'Reuben', 10, tooltip_html ],
           [ 'Israel', 'Simeon', 10, tooltip_html ],
           [ 'Israel', 'Levi', 10, tooltip_html ],
@@ -56,7 +56,7 @@
           [ 'Ephraim / Northern Kingdom', 'Restored Church / Gathered Israel', 25, tooltip_html ],
           [ 'Ephraim / Northern Kingdom', 'Lost Israel', 55, tooltip_html ],
           [ 'Restored Church / Gathered Israel', 'D&C "Ephraim"', 25, tooltip_html ],
-          [ 'Lost Israel', 'D&C "Judah"', 70, tooltip_html ],
+          [ 'Lost Israel', 'D&C "Judah"', 90, tooltip_html ],
           [ 'Modern Jews', 'D&C "Judah"', 25, tooltip_html ],
         ]);
 
@@ -74,7 +74,8 @@
             link: {
               colorMode: 'gradient',
               colors: colors
-            }
+            },
+            iterations: 500
           },
           tooltip: { isHtml: true }
         };
