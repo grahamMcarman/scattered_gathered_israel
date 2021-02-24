@@ -22,8 +22,8 @@ Description:  This is a fun project inspired by my class on the Scattering and G
       function drawChart() {
         // Create custom tooltips for later
         var tooltip_html = '<span style="display: none" />' // Google doesn't provide a way to remove the tooltip. This reduces it to a dot.
-        var tooltip_northern = AkaTooltip(['Ephraim', 'The Kingdom of Israel', 'The Ten Tribes'])
-        var tooltip_southern = AkaTooltip(['Judah', 'Ancient Jews'])
+        var tooltip_northern = AkaTooltip('Northern Kingdom', ['Ephraim', 'The Kingdom of Israel', 'The Ten Tribes'])
+        var tooltip_southern = AkaTooltip('Southern Kingdom', ['Judah', 'Ancient Jews'])
 
         // Create a data table for the chart
         var data = new google.visualization.DataTable();
@@ -95,8 +95,11 @@ Description:  This is a fun project inspired by my class on the Scattering and G
       }
 
       // This helps me customize node labels via tooltip
-      function AkaTooltip(alternate_terms){
-        var html_text = '<div style = "padding: 5px;">Also known as:<ul>'
+      function AkaTooltip(primary_term, alternate_terms){
+        var html_text = '<div style = "background-color: rgba(255,255,255,0.5);padding: 5px; font-family: calibri; font-size: 14;">' + 
+                          '<span style="font-weight:bold; font-size: 18">' + primary_term + '</span><br/>' +
+                          '<span style="font-style:italic;"">Also known as:</span>' +
+                          '<ul style="margin-top:0px">'
         alternate_terms.forEach(element => {
           html_text += '<li>' + element + '</li>'
         });
