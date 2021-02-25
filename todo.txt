@@ -1,5 +1,3 @@
--   Add header +/ Explanation
-
 -   Make it responsive 
     https://stackoverflow.com/questions/41319720/make-google-chart-responsive
     https://codepen.io/flopreynat/pen/BfLkA
