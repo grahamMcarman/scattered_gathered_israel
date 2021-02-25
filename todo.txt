@@ -2,9 +2,6 @@
     https://stackoverflow.com/questions/41319720/make-google-chart-responsive
     https://codepen.io/flopreynat/pen/BfLkA
 
--   Try out annotation instead of tooltip (for AKA)
-    https://developers.google.com/chart/interactive/docs/customizing_tooltip_content#annotating-data
-
 +   Try connecting GitHub to Amplify
 
 +   Try getting a domain name
