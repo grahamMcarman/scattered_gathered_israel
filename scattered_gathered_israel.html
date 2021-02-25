@@ -10,6 +10,7 @@ Description:  This is a fun project inspired by my class on the Scattering and G
 <html>
   <head>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script type="text/javascript">
       google.charts.load('current', {'packages':['sankey']});
       google.charts.setOnLoadCallback(drawChart);
@@ -86,6 +87,11 @@ Description:  This is a fun project inspired by my class on the Scattering and G
         // Draw chart
         var chart = new google.visualization.Sankey(document.getElementById('sankey_basic'));
         chart.draw(data, options);
+
+        // Make it responsive to resized window
+        $(window).resize(function(){
+          chart.draw(data, options);
+        });
       }
 
       // This helps me customize node labels via tooltip
