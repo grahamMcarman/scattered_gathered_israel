@@ -20,6 +20,7 @@ Description:  This is a fun project inspired by my class on the Scattering and G
         var tooltip_html = '<span style="display: none" />' // Google doesn't provide a way to remove the tooltip. This reduces it to a dot.
         var tooltip_northern = AkaTooltip('Northern Kingdom', ['Ephraim', 'The Kingdom of Israel', 'The Ten Tribes'])
         var tooltip_southern = AkaTooltip('Southern Kingdom', ['Judah', 'Ancient Jews'])
+        var tooltip_dc_judah = AkaTooltip('D&C "Judah"', ['Scattered Israel'])
 
         // Create a data table for the chart
         var data = new google.visualization.DataTable();
@@ -57,13 +58,13 @@ Description:  This is a fun project inspired by my class on the Scattering and G
           [ 'Benjamin',                   'Mixed Israel',              10, tooltip_html ],
           [ 'Mixed Israel',               'Southern Kingdom',          40, tooltip_southern ],
           [ 'Mixed Israel',               'Northern Kingdom',          80, tooltip_northern ],
-          [ 'Southern Kingdom',           'Lost Israel',               15, tooltip_html ],
-          [ 'Southern Kingdom',           'Modern Jews',               25, tooltip_html ],
+          [ 'Southern Kingdom',           'Lost Israel',               25, tooltip_html ],
+          [ 'Southern Kingdom',           'Modern Jews',               15, tooltip_html ],
           [ 'Northern Kingdom',           'Restored / Gathered Church',25, tooltip_html ],
           [ 'Northern Kingdom',           'Lost Israel',               55, tooltip_html ],
           [ 'Restored / Gathered Church', 'D&C "Ephraim"',             25, tooltip_html ],
-          [ 'Lost Israel',                'D&C "Judah"',               70, tooltip_html ],
-          [ 'Modern Jews',                'D&C "Judah"',               25, tooltip_html ],
+          [ 'Lost Israel',                'D&C "Judah"',               80, tooltip_dc_judah ],
+          [ 'Modern Jews',                'D&C "Judah"',               15, tooltip_html ],
         ]);
 
         var colors = ['#a6cee3', '#b2df8a', '#fb9a99', '#fdbf6f',
