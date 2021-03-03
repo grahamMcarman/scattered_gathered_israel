@@ -1,3 +1,8 @@
+-   Make the Restored Church / Ephraim come out of *Lost Israel*, not the Northern Kingdom
+    -   Consider consolidating Church + Ephraim
+
++   Try splitting each group linearly into its names as separate, equal nodes (like restored church -> ephraim)
+
 +   Try connecting GitHub to Amplify
 
 +   Try getting a domain name
